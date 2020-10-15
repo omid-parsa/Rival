@@ -1,24 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Router, Switch } from 'react-router-dom';
+import {ReactComponent as Logo} from './assets/ryval.svg';
+
+import NavBar from './components/navbar/navbar.component';
+
 import './App.css';
 
+
+import HomePage from './pages/homepage/homepage.component';
+
 function App() {
+  const navLinks = [
+    {
+      text: 'New Releases',
+      path: '/'
+    },
+    {
+      text: 'Men',
+      path: '/'
+    },
+    {
+      text: 'Women',
+      path: '/'
+    },
+    {
+      text: 'Kids',
+      path: '/'
+    },
+    {
+      text: 'Sale',
+      path: '/'
+    },
+    {
+      text: 'Collections',
+      path: '/'
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar navLinks= {navLinks}
+      logo = {Logo} />
+      <Switch>
+
+      </Switch>
+      {/* <Header /> */}
+      <HomePage />
+      <HomePage />
+      <HomePage />
+      <HomePage />
     </div>
   );
 }
